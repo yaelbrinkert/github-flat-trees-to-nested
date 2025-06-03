@@ -1,6 +1,6 @@
 {
   "name": "github-flat-trees-to-nested",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "tree",
     "nested",
@@ -11,13 +11,16 @@
     "flat trees to nested"
   ],
   "description": "Quick way to transform flat tree Github REST API response to a fully proper nested tree.",
-  "homepage": "https://github.com/yaelbrinkert/github-flat-trees-to-nested#readme",
+  "homepage": "https://www.npmjs.com/package/github-flat-trees-to-nested",
   "bugs": {
     "url": "https://github.com/yaelbrinkert/github-flat-trees-to-nested/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yaelbrinkert/github-flat-trees-to-nested.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "license": "ISC",
   "author": "Yael Brinkert",
