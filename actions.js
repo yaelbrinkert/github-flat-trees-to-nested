@@ -19,19 +19,3 @@ export async function getRootFoldersFromRepo() {
     console.log(err);
   }
 }
-
-export async function getOnefile(itemPath) {
-  try {
-    const { data } = await octokit.request(
-      "GET /repos/{owner}/{repo}/contents/{path}",
-      {
-        owner: "yaelbrinkert",
-        repo: "fortnite-archives",
-        path: "chapter_6/season_1/33_00/33_00.jpg",
-      }
-    );
-    return data;
-  } catch (err) {
-    console.log(err);
-  }
-}
