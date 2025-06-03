@@ -1,6 +1,6 @@
 {
   "name": "github-flat-trees-to-nested",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Quick way to transform flat tree Github REST API response to a fully proper nested tree.",
   "homepage": "https://github.com/yaelbrinkert/github-flat-trees-to-nested#readme",
   "bugs": {
