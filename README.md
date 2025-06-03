@@ -3,9 +3,6 @@
   <a href="https://yael-brinkert.fr" target="_blank"><img width="96px" src="https://github.com/yaelbrinkert/github-flat-trees-to-nested/blob/main/src/images/nesty-logo-lg-transparent.png?raw=true" /></a>
   <h3 align="center">NestyJS</h3>
   <p align="center">Transform Github Flat Trees into Nested Trees.</p>
-  <p align="center">Open Source</p>
-    <img src="https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=fff&style=flat-square" alt="TypeScript" />
-  </p>
   <p align="center">
     Need help? See <a href="#">NestyJS</a> for the documentation.
   </p>
@@ -15,66 +12,39 @@
 
 ## _Transform your flat trees into beautiful and useful nested objects or arrays_
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+<p align="center">
+  <img src="https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=fff&style=flat-square" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=fff" alt="Vitest" />
+  <img src="https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff" alt="NPM" />
+  <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Github" />
+</p>
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
+NestyJS is a simple package that gives you possibility to transform "flat trees", from Github REST API, to nested trees of different forms.
 
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
-
-## Features
-
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
-
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is \*actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
+- Make a request to Github's API
+- Receive your flat tree
+- Use one of the nested function options
+- Choose if you want to keep metadatas from Github response
+- ✨ Magic ✨
+- You receive a usable nested tree
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
+NestyJS uses Typescript to keep safety use of functions. Types have been adapted for a tree given by Github REST API, but can accept more global flat trees depending on the form.
 
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-  to Markdown converter
-- [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
+Of course NestyJS itself is open source with a [public repository][github-flat-trees-to-nested]
 on GitHub.
 
 ## Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+NestyJS requires [Node.js](https://nodejs.org/) v10+ to run.
+You also need [Octokit](https://www.npmjs.com/package/octokit) to be able to get datas from Github API (recommended)
 
-Install the dependencies and devDependencies and start the server.
+Install the package this way.
 
 ```sh
-cd dillinger
-npm i
+cd your-app
+npm install 
 node app
 ```
 
