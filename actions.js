@@ -14,7 +14,6 @@ export async function getRootFoldersFromRepo() {
         tree_sha: "main",
       }
     );
-    console.log(data);
     return data;
   } catch (err) {
     console.log(err);

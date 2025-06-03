@@ -1,13 +1,14 @@
 import { getRootFoldersFromRepo } from "./actions.js";
-import { buildNested } from "./transform-to-tree.js";
+import { buildNestedObject, buildNestedArray } from "./transform-to-tree.js";
 
 async function test() {
-    const flat_tree = await getRootFoldersFromRepo()
-    const nested_tree = buildNested(flat_tree)
-    console.log(nested_tree)
+  const flat_tree = await getRootFoldersFromRepo();
+  // const nested_tree = buildNestedObject(flat_tree);
+  const nested_tree = buildNestedArray(flat_tree);
+  console.log(nested_tree);
 }
 
-test()
+test();
 
 // on prend les path de chaque objet.
 // on split avec "/" pour récupérer chaque dossier ou fichier.
