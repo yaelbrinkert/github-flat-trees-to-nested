@@ -1,6 +1,6 @@
 <p align="center">
   <br/>
-  <a href="https://yael-brinkert.fr" target="_blank"><img width="96px" src="https://authjs.dev/img/logo-sm.png" /></a>
+  <a href="https://yael-brinkert.fr" target="_blank"><img width="96px" src="https://github.com/yaelbrinkert/github-flat-trees-to-nested/blob/main/src/images/nesty-logo-lg-transparent.png?raw=true" /></a>
   <h3 align="center">NestyJS</h3>
   <p align="center">Transform Github Flat Trees into Nested Trees.</p>
   <p align="center">Open Source</p>
