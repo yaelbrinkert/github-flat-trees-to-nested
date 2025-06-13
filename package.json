@@ -8,7 +8,12 @@
     "nested tree",
     "github",
     "api",
-    "flat trees to nested"
+    "flat trees to nested",
+    "octokit",
+    "github api",
+    "directory structure",
+    "filesystem tree",
+    "json to tree"
   ],
   "description": "Quick way to transform flat tree Github REST API response to a fully proper nested tree.",
   "homepage": "https://www.npmjs.com/package/github-flat-trees-to-nested",
@@ -30,12 +35,21 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "vitest"
   },
   "dependencies": {
     "octokit": "^5.0.3",
     "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",

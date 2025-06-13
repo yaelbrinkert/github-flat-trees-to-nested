@@ -1,73 +1,99 @@
-<p align="center">
-  <br/>
-  <a href="https://yael-brinkert.fr" target="_blank"><img width="96px" src="https://github.com/yaelbrinkert/github-flat-trees-to-nested/blob/main/src/images/nesty-logo-lg-transparent.png?raw=true" /></a>
-  <h3 align="center">NestyJS</h3>
-  <p align="center">Transform Github Flat Trees into Nested Trees.</p>
-  <p align="center">
-    Need help? See <a href="#">NestyJS</a> for the documentation.
-  </p>
-</p>
+# github-flat-trees-to-nested
 
-# Github Flat Trees to Nested
+Transform a flat file tree from the GitHub REST API into a properly structured nested format — easily consumable for UIs or filesystem-like processing.
 
-## _Transform your flat trees into beautiful and useful nested objects or arrays_
+[![NPM version](https://img.shields.io/npm/v/github-flat-trees-to-nested.svg)](https://www.npmjs.com/package/github-flat-trees-to-nested)
+[![Weekly Downloads](https://img.shields.io/npm/dw/github-flat-trees-to-nested.svg)](https://www.npmjs.com/package/github-flat-trees-to-nested)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-<p align="center">
-  <img src="https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=fff&style=flat-square" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=fff" alt="Vitest" />
-  <img src="https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff" alt="NPM" />
-  <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="Github" />
-</p>
+---
 
-NestyJS is a simple package that gives you possibility to transform "flat trees", from Github REST API, to nested trees of different forms.
+## ✨ Features
 
-- Make a request to Github's API
-- Receive your flat tree
-- Use one of the nested function options
-- Choose if you want to keep metadatas from Github response
-- ✨ Magic ✨
-- You receive a usable nested tree
+- Converts GitHub's flat `tree` structure into:
+  - Nested arrays (ideal for rendering UIs like file explorers from Shadcn)
+  - Nested objects (if preferred for logic)
+- Compatible with GitHub REST API `GET /repos/:owner/:repo/git/trees/:tree_sha`
+- TypeScript support out of the box
+- Zero dependencies outside of GitHub's API tooling
 
-## Tech
+---
 
-NestyJS uses Typescript to keep safety use of functions. Types have been adapted for a tree given by Github REST API, but can accept more global flat trees depending on the form.
+## 📦 Installation
 
-Of course NestyJS itself is open source with a [public repository][github-flat-trees-to-nested]
-on GitHub.
-
-## Installation
-
-NestyJS requires [Node.js](https://nodejs.org/) v10+ to run.
-You also need [Octokit](https://www.npmjs.com/package/octokit) to be able to get datas from Github API (recommended)
-
-Install the package this way.
-
-```sh
-cd your-app
-npm i github-flat-trees-to-nested
+```bash
+npm install github-flat-trees-to-nested
 ```
 
-Using this npm package, you'll have already all dependencies installed for your project ([Octokit](https://www.npmjs.com/package/octokit))
+## 🔧 Usage
 
-## Configuration and uses
+Import one of the builders:
 
-> [!IMPORTANT]
-> Take a look [actions.js](https://github.com/yaelbrinkert/github-flat-trees-to-nested/blob/main/actions.js) if you want a real case scenario of using Octokit to retrieve a tree.
+```
+import {
+  buildNestedArray,
+  buildNestedObject,
+  buildNestedArraysShadcn,
+} from "github-flat-trees-to-nested";
+```
 
-> [!IMPORTANT]
-> It is important to specify ```?recursive=1``` in your request to Github API, this will go entirely through parents and children, instead of stopping at the first child or parent.
+Example input from GitHub API:
 
-Use the type of tree you need :
-> [!NOTE]
-> - buildNestedArrays
-> - buildNestedObjects
+GitHub returns a flat list of files and folders:
 
-These functions needs, as arguments :
-```flatTree```: waited in the form of a GithubTree
-```metaData```: boolean (true or false) to determinate if you want, or not, metadatas included (from Github REST API response)
+```
+{
+  "tree": [
+    { "path": ".gitignore", "type": "blob" },
+    { "path": "README.md", "type": "blob" },
+    { "path": "chapter_1", "type": "tree" },
+    { "path": "chapter_1/season_1", "type": "tree" },
+    { "path": "chapter_1/season_1/1_11", "type": "tree" },
+    { "path": "chapter_1/season_1/1_11/1_11.jpg", "type": "blob" },
+    { "path": "chapter_1/season_1/1_11/1_11.json", "type": "blob" }
+  ]
+}
+```
 
-## Boiler Plate (example) using Octokit, npm package "github-flat-trees-to-nested" & shadcn/ui
+Output using `buildNestedArray()`
 
-blabla
+```
+const result = buildNestedArray(flatTree);
+console.log(result);
+```
 
+```
+[
+  ".gitignore",
+  "README.md",
+  ["chapter_1", [
+    ["season_1", [
+      ["1_11", [
+        "1_11.jpg",
+        "1_11.json"
+      ]]
+    ]]
+  ]]
+]
+```
 
+## 📚 API Reference
+
+`buildNestedArray(flatTree: GithubTree): NestedArrayItem[]`
+Returns a tree structure in nested array format.
+
+`buildNestedObject(flatTree: GithubTree): { [key: string]: any }`
+Returns a nested object format (keys are folder names, leaves are filenames).
+
+`buildNestedArraysShadcn(flatTree: GithubTree): { label: string, children?: any[] }[]`
+Returns a format ideal for libraries like shadcn/ui or Radix UI.
+
+## 🧪 Tests
+
+`npm run test`
+
+Tested with Vitest
+
+## 📄 License
+
+ISC - Yael BRINKERT
