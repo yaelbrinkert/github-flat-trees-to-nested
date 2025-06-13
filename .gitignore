@@ -3,3 +3,4 @@ node_modules
 *.DS_Store
 actions.js
 dist/
+boilerplate/

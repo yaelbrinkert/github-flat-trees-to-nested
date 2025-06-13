@@ -12,3 +12,4 @@ vitest.config.ts
 .vscode/
 .env
 actions.js
+boilerplate/
