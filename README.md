@@ -19,6 +19,25 @@ Transform a flat file tree from the GitHub REST API into a properly structured n
 
 ---
 
+## 🍜 Boilerplate
+
+You can try and install a boiler plate, using Vite + React + TS & github-flat-trees-to-nested.
+
+Access demo here : https://yaelbrinkert.github.io/github-flat-trees-to-nested/
+
+Install boilerplate doing :
+
+```
+git clone https://github.com/yaelbrinkert/github-flat-trees-to-nested.git
+cd github-flat-trees-to-nested/boilerplate
+npm install
+npm run dev
+```
+
+This way, you'll have a working demo !
+
+---
+
 ## 📦 Installation
 
 ```bash
