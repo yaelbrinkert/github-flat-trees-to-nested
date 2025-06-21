@@ -1,5 +1,5 @@
 {
-  "name": "github-flat-trees-to-nested",
+  "name": "@yaelbrinkert/github-flat-trees-to-nested",
   "version": "3.0.1",
   "keywords": [
     "tree",
