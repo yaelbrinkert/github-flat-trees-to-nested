@@ -1,6 +1,6 @@
 {
-  "name": "@yaelbrinkert/github-flat-trees-to-nested",
-  "version": "3.0.1",
+  "name": "@yaelouuu/github-flat-trees-to-nested",
+  "version": "3.0.2",
   "keywords": [
     "tree",
     "nested",
@@ -15,7 +15,7 @@
     "filesystem tree",
     "json to tree"
   ],
-  "description": "Quick way to transform flat tree Github REST API response to a fully proper nested tree.",
+  "description": "Quick way to transform flat tree Github REST API response to a fully proper nested tree. Github Flat Trees to Nested.",
   "homepage": "https://www.npmjs.com/package/github-flat-trees-to-nested",
   "bugs": {
     "url": "https://github.com/yaelbrinkert/github-flat-trees-to-nested/issues"
